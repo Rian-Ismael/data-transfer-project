@@ -22,12 +22,11 @@ public class DataTypesActionTest {
   @Test
   public void testGetRequestType() {
     AuthServiceProviderRegistry registry = mock(AuthServiceProviderRegistry.class);
-    DataTypesAction dataTypesAction = new DataTypesAction(registry, new Monitor() {
-    });
+    DataTypesAction dataTypesAction = new DataTypesAction(registry, new Monitor());
 
     Class<GetDataTypes> actual = dataTypesAction.getRequestType();
-    assertNotEquals(actual, null);
-    assertEquals(actual, GetDataTypes.class);
+    assertNotEquals(actual, null, "Expected request type should not be null.");
+    assertEquals(actual, GetDataTypes.class, "Expected the request type to be GetDataTypes.class.");
   }
 
   @Test
